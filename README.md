@@ -14,3 +14,6 @@ And a basic blog page with and About us.
 I would love if someone  will imporve this code.....
 
 Have a good day  @web development.
+
+
+  Credits: https://github.com/haris989/TextUtils
