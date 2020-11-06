@@ -1,0 +1,94 @@
+<!doctype html>
+<body lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>PrivatetextAnalyzer.com</title>
+  </head>
+
+</body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">PrivatetxtAnalyzer.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+     <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hello User</strong> You can dismiss this alerts
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<!Here I am using CSRF token to post the data hide the url and it  is type of security so everyone should should use the CSRF token.
+I can get this  token only If I've used  post method to post this data.-->
+
+
+   <div class="container">
+     <form action="/contactus"  method="post">{% csrf_token %}
+       <div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter  your text here</label>
+    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+    <div class="custom-control custom-switch">
+  <input type="checkbox"  name="remove_pun" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">Remove punctuations</label>
+</div>
+
+     <div class="custom-control custom-switch">
+  <input type="checkbox" name="caps" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">Capitalise</label>
+</div>
+
+     <div class="custom-control custom-switch">
+  <input type="checkbox" name="new_line_rem" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">Newline remover</label>
+</div>
+
+     <div class="custom-control custom-switch">
+  <input type="checkbox"  name="extra_space_remover"  class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4"> Exta space Remover</label>
+</div>
+
+     <div class="custom-control custom-switch">
+  <input type="checkbox" name="char_count" class="custom-control-input" id="customSwitch5">
+  <label class="custom-control-label" for="customSwitch5">Character count</label>
+</div>
+<button type="submit" class="btn btn-primary mt-2">Analyze text</button>
+     </form>
+   </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
